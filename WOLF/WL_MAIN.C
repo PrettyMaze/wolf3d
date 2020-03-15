@@ -1477,8 +1477,8 @@ void    DemoLoop (void)
 	StartCPMusic(INTROSONG);
 
 #ifndef JAPAN
-	if (!NoWait)
-		PG13 ();
+//	if (!NoWait)
+//		PG13 ();
 #endif
 
 #endif

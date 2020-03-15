@@ -12,7 +12,7 @@
 =============================================================================
 */
 
-#define MAXMOUSETURN	10
+#define MAXMOUSEMOUSETURN	10
 
 
 #define MOVESCALE		150l
@@ -158,46 +158,80 @@ void ControlMovement (objtype *ob)
 	oldx = player->x;
 	oldy = player->y;
 
-//
-// side to side move
-//
-	if (buttonstate[bt_strafe])
-	{
-	//
-	// strafing
-	//
-	//
-		if (controlx > 0)
-		{
-			angle = ob->angle - ANGLES/4;
-			if (angle < 0)
-				angle += ANGLES;
-			Thrust (angle,controlx*MOVESCALE);	// move to left
-		}
-		else if (controlx < 0)
-		{
-			angle = ob->angle + ANGLES/4;
-			if (angle >= ANGLES)
-				angle -= ANGLES;
-			Thrust (angle,-controlx*MOVESCALE);	// move to right
-		}
-	}
-	else
-	{
-	//
-	// not strafing
-	//
-		anglefrac += controlx;
-		angleunits = anglefrac/ANGLESCALE;
-		anglefrac -= angleunits*ANGLESCALE;
-		ob->angle -= angleunits;
+    if (demoplayback)
+    {
+        if (buttonstate[bt_strafe])
+        {
+        //
+        // strafing
+        //
+        //
+            if (controlx > 0)
+            {
+                angle = ob->angle - ANGLES/4;
+                if (angle < 0)
+                    angle += ANGLES;
+                Thrust (angle,controlx*MOVESCALE);	// move to left
+            }
+            else if (controlx < 0)
+            {
+                angle = ob->angle + ANGLES/4;
+                if (angle >= ANGLES)
+                    angle -= ANGLES;
+                Thrust (angle,-controlx*MOVESCALE);	// move to right
+            }
+        }
+        else
+        {
+        //
+        // not strafing
+        //
+            anglefrac += controlx;
+            angleunits = anglefrac/ANGLESCALE;
+            anglefrac -= angleunits*ANGLESCALE;
+            ob->angle -= angleunits;
 
-		if (ob->angle >= ANGLES)
-			ob->angle -= ANGLES;
-		if (ob->angle < 0)
-			ob->angle += ANGLES;
+            if (ob->angle >= ANGLES)
+                ob->angle -= ANGLES;
+            if (ob->angle < 0)
+                ob->angle += ANGLES;
 
-	}
+        }
+    }
+    else
+    {
+    //
+    // side to side strafe move
+    //
+        if (controlx > 0)
+        {
+            angle = ob->angle - ANGLES/4;
+            if (angle < 0)
+                angle += ANGLES;
+            Thrust (angle,controlx*MOVESCALE);	// move to left
+        }
+        else if (controlx < 0)
+        {
+            angle = ob->angle + ANGLES/4;
+            if (angle >= ANGLES)
+                angle -= ANGLES;
+            Thrust (angle,-controlx*MOVESCALE);	// move to right
+        }
+
+    //
+    // side by side rotate
+    //
+        anglefrac += rotatex;
+        angleunits = anglefrac/ANGLESCALE;
+        anglefrac -= angleunits*ANGLESCALE;
+        ob->angle -= angleunits;
+
+        if (ob->angle >= ANGLES)
+            ob->angle -= ANGLES;
+        if (ob->angle < 0)
+            ob->angle += ANGLES;
+
+    }
 
 //
 // forward/backwards move
