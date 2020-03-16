@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="WOLF3D" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/WOLF3D" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="default">
+				<Option output="out/WOLF3D" prefix_auto="1" extension_auto="1" />
+				<Option object_output="out/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="AUDIOSDM.H" />
+		<Unit filename="AUDIOSOD.H" />
+		<Unit filename="AUDIOWL1.H" />
+		<Unit filename="AUDIOWL6.H" />
+		<Unit filename="BUDIOSOD.H" />
+		<Unit filename="BUDIOWL6.H" />
+		<Unit filename="C0.ASM" />
+		<Unit filename="CONTIGSC.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="DETECT.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="FOREIGN.H" />
+		<Unit filename="F_SPEAR.H" />
+		<Unit filename="GFXE_SOD.H" />
+		<Unit filename="GFXE_WL1.H" />
+		<Unit filename="GFXE_WL6.H" />
+		<Unit filename="GFXV_SDM.H" />
+		<Unit filename="GFXV_SOD.H" />
+		<Unit filename="GFXV_WL1.H" />
+		<Unit filename="GFXV_WL6.H" />
+		<Unit filename="H_LDIV.ASM" />
+		<Unit filename="ID_CA.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ID_CA.H" />
+		<Unit filename="ID_HEAD.H" />
+		<Unit filename="ID_HEADS.H" />
+		<Unit filename="ID_IN.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ID_IN.H" />
+		<Unit filename="ID_MM.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ID_MM.H" />
+		<Unit filename="ID_PM.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ID_PM.H" />
+		<Unit filename="ID_SD.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ID_SD.H" />
+		<Unit filename="ID_SD_A.ASM" />
+		<Unit filename="ID_US.H" />
+		<Unit filename="ID_US_1.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ID_US_A.ASM" />
+		<Unit filename="ID_VH.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ID_VH.H" />
+		<Unit filename="ID_VH_A.ASM" />
+		<Unit filename="ID_VL.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ID_VL.H" />
+		<Unit filename="ID_VL_A.ASM" />
+		<Unit filename="JABHACK.ASM" />
+		<Unit filename="MAPSSDM.H" />
+		<Unit filename="MAPSSOD.H" />
+		<Unit filename="MAPSWL1.H" />
+		<Unit filename="MAPSWL6.H" />
+		<Unit filename="MAPSWLF.H" />
+		<Unit filename="MUNGE.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="OLDSCALE.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="PICLIST.H" />
+		<Unit filename="PMAZEVER.H" />
+		<Unit filename="SDMVER.H" />
+		<Unit filename="SHAREMSG.H" />
+		<Unit filename="SODVER.H" />
+		<Unit filename="SPANISH.H" />
+		<Unit filename="SPANVER.H" />
+		<Unit filename="VERSION.H" />
+		<Unit filename="WHACK_A.ASM" />
+		<Unit filename="WLFJ1VER.H" />
+		<Unit filename="WL_ACT1.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="WL_ACT2.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="WL_AGENT.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="WL_ASM.ASM" />
+		<Unit filename="WL_DEBUG.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="WL_DEF.H" />
+		<Unit filename="WL_DRAW.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="WL_DR_A.ASM" />
+		<Unit filename="WL_GAME.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="WL_INTER.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="WL_MAIN.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="WL_MENU.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="WL_MENU.H" />
+		<Unit filename="WL_PLAY.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="WL_SCALE.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="WL_STATE.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="WL_TEXT.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="WOLF1VER.H" />
+		<Unit filename="WOLFGTV.H" />
+		<Unit filename="WOLFHACK.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="WOLFJVER.H" />
+		<Unit filename="WOLFVER.H" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

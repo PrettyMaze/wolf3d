@@ -12,7 +12,7 @@
 =============================================================================
 */
 
-#define MAXMOUSEMOUSETURN	10
+#define MAXMOUSETURN	10
 
 
 #define MOVESCALE		150l
@@ -158,6 +158,48 @@ void ControlMovement (objtype *ob)
 	oldx = player->x;
 	oldy = player->y;
 
+#ifndef PMZVER
+//
+// side to side move
+//
+    if (buttonstate[bt_strafe])
+    {
+    //
+    // strafing
+    //
+    //
+        if (controlx > 0)
+        {
+            angle = ob->angle - ANGLES/4;
+            if (angle < 0)
+                angle += ANGLES;
+            Thrust (angle,controlx*MOVESCALE);	// move to left
+        }
+        else if (controlx < 0)
+        {
+            angle = ob->angle + ANGLES/4;
+            if (angle >= ANGLES)
+                angle -= ANGLES;
+            Thrust (angle,-controlx*MOVESCALE);	// move to right
+        }
+    }
+    else
+    {
+    //
+    // not strafing
+    //
+        anglefrac += controlx;
+        angleunits = anglefrac/ANGLESCALE;
+        anglefrac -= angleunits*ANGLESCALE;
+        ob->angle -= angleunits;
+
+        if (ob->angle >= ANGLES)
+            ob->angle -= ANGLES;
+        if (ob->angle < 0)
+            ob->angle += ANGLES;
+
+    }
+#else
     if (demoplayback)
     {
         if (buttonstate[bt_strafe])
@@ -232,6 +274,7 @@ void ControlMovement (objtype *ob)
             ob->angle += ANGLES;
 
     }
+#endif // PMZVER
 
 //
 // forward/backwards move

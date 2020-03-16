@@ -6,5 +6,5 @@
 //#define MYPROFILE
 //#define DEBCHECK
 #define CARMACIZED
-#define PMAZEVER
+#define PMZVER
 //#define UPLOAD

@@ -904,7 +904,11 @@ extern	int			viewsize;
 //
 // curent user input
 //
+#ifndef PMZVER
+extern	int			controlx,controly;		// range from -100 to 100
+#else
 extern	int			controlx,controly,rotatex;		// range from -100 to 100
+#endif // PMZVER
 extern	boolean		buttonstate[NUMBUTTONS];
 
 extern	boolean		demorecord,demoplayback;

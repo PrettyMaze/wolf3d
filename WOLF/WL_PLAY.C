@@ -74,7 +74,11 @@ memptr		demobuffer;
 //
 // curent user input
 //
+#ifndef PMZVER
+int			controlx,controly;		// range from -100 to 100 per tic
+#else
 int			controlx,controly,rotatex;		// range from -100 to 100 per tic
+#endif // PMZVER
 boolean		buttonstate[NUMBUTTONS];
 
 
@@ -375,6 +379,15 @@ void PollKeyboardMove (void)
 
 void PollMouseMove (void)
 {
+#ifndef PMZVER
+	int	mousexmove,mouseymove;
+
+	Mouse(MDelta);
+	mousexmove = _CX;
+	mouseymove = _DX;
+	controlx += mousexmove*10/(13-mouseadjustment);
+	controly += mouseymove*20/(13-mouseadjustment);
+#else
 	if (demoplayback)
     {
         int	mousexmove,mouseymove;
@@ -397,6 +410,7 @@ void PollMouseMove (void)
 
         rotatex += mousexmove*10/(13-mouseadjustment);
     }
+#endif // PMZVER
 }
 
 /*
@@ -467,8 +481,10 @@ void PollJoystickMove (void)
 void PollControls (void)
 {
 	int		max,min,i;
-	int     rmax,rmin;
 	byte	buttonbits;
+#ifdef PMZVER
+	int     rmax,rmin;
+#endif // PMZVER
 
 //
 // get timing info for last frame
@@ -497,7 +513,9 @@ void PollControls (void)
 
 	controlx = 0;
 	controly = 0;
+#ifdef PMZVER
 	rotatex = 0;
+#endif // PMZVER
 	memcpy (buttonheld,buttonstate,sizeof(buttonstate));
 	memset (buttonstate,0,sizeof(buttonstate));
 
@@ -553,8 +571,6 @@ void PollControls (void)
 //
 	max = 100*tics;
 	min = -max;
-	rmax = 255*tics;
-	rmin = -rmax;
 	if (controlx > max)
 		controlx = max;
 	else if (controlx < min)
@@ -565,10 +581,14 @@ void PollControls (void)
 	else if (controly < min)
 		controly = min;
 
+#ifdef PMZVER
+	rmax = 255*tics;
+	rmin = -rmax;
 	if (rotatex > rmax)
 		rotatex = rmax;
 	else if (rotatex < rmin)
 		rotatex = rmin;
+#endif // PMZVER
 
 	if (demorecord)
 	{
@@ -577,7 +597,6 @@ void PollControls (void)
 	//
 		controlx /= (int)tics;
 		controly /= (int)tics;
-//		rotatex /= (int)tics;
 
 		buttonbits = 0;
 
@@ -591,14 +610,12 @@ void PollControls (void)
 		*demoptr++ = buttonbits;
 		*demoptr++ = controlx;
 		*demoptr++ = controly;
-//		*demoptr++ = rotatex;
 
 		if (demoptr >= lastdemoptr)
 			Quit ("Demo buffer overflowed!");
 
 		controlx *= (int)tics;
 		controly *= (int)tics;
-//		rotatex *= (int)tics;
 	}
 }
 
