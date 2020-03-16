@@ -1466,7 +1466,9 @@ void    DemoLoop (void)
 
 			#ifndef GOODTIMES
 			#ifndef SPEARDEMO
+			#ifndef PMZVER
 			CopyProtection();
+			#endif // PMZVER
 			#endif
 			#endif
 

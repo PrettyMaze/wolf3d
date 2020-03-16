@@ -18,6 +18,8 @@
 #define __ID_GLOB__
 //#include "VERSION.H"
 #include "PMZVER.H"
+//#include "SODVER.H"
+//#include "PMZVERSD.H"
 
 //--------------------------------------------------------------------------
 

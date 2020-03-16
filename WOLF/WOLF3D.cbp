@@ -105,7 +105,8 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="PICLIST.H" />
-		<Unit filename="PMAZEVER.H" />
+		<Unit filename="PMZVER.H" />
+		<Unit filename="PMZVERSD.H" />
 		<Unit filename="SDMVER.H" />
 		<Unit filename="SHAREMSG.H" />
 		<Unit filename="SODVER.H" />
