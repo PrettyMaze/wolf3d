@@ -616,7 +616,7 @@ void CP_ReadThis(void)
 #endif
 #endif
 
-#ifndef SPEAR
+#if defined(SPEAR)||defined(GOODTIMES)||defined(PMZVER)
 ////////////////////////////////////////////////////////////////////
 //
 // BOSS KEY
@@ -637,30 +637,7 @@ void BossKey(void)
 	VL_SetPalette (&gamepal);
 	LoadLatchMem();
 }
-#else
-#ifndef GOODTIMES
-////////////////////////////////////////////////////////////////////
-//
-// BOSS KEY
-//
-////////////////////////////////////////////////////////////////////
-void BossKey(void)
-{
-	SD_MusicOff();
-	_AX = 3;
-	geninterrupt(0x10);
-	printf("C>");
-	while (!Keyboard[sc_Escape])
-	IN_ClearKeysDown();
-
-	SD_MusicOn();
-	VL_SetVGAPlaneMode ();
-	VL_TestPaletteSet ();
-	VL_SetPalette (&gamepal);
-	LoadLatchMem();
-}
-#endif // GOODTIMES
-#endif // SPEAR
+#endif
 
 ////////////////////////////////////////////////////////////////////
 //

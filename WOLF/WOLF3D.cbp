@@ -46,12 +46,19 @@
 		</Unit>
 		<Unit filename="FOREIGN.H" />
 		<Unit filename="F_SPEAR.H" />
+		<Unit filename="GFXE_SOD.EQU" />
 		<Unit filename="GFXE_SOD.H" />
+		<Unit filename="GFXE_WL1.EQU" />
 		<Unit filename="GFXE_WL1.H" />
+		<Unit filename="GFXE_WL6.EQU" />
 		<Unit filename="GFXE_WL6.H" />
+		<Unit filename="GFXV_SDM.EQU" />
 		<Unit filename="GFXV_SDM.H" />
+		<Unit filename="GFXV_SOD.EQU" />
 		<Unit filename="GFXV_SOD.H" />
+		<Unit filename="GFXV_WL1.EQU" />
 		<Unit filename="GFXV_WL1.H" />
+		<Unit filename="GFXV_WL6.EQU" />
 		<Unit filename="GFXV_WL6.H" />
 		<Unit filename="H_LDIV.ASM" />
 		<Unit filename="ID_CA.C">
@@ -75,6 +82,7 @@
 		<Unit filename="ID_SD.C">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="ID_SD.EQU" />
 		<Unit filename="ID_SD.H" />
 		<Unit filename="ID_SD_A.ASM" />
 		<Unit filename="ID_US.H" />
@@ -90,6 +98,7 @@
 		<Unit filename="ID_VL.C">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="ID_VL.EQU" />
 		<Unit filename="ID_VL.H" />
 		<Unit filename="ID_VL_A.ASM" />
 		<Unit filename="JABHACK.ASM" />
